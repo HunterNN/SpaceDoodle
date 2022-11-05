@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://te5evfy6nkmb"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_auvl6"]
+[ext_resource type="Texture2D" uid="uid://dsnlyqgmbvlby" path="res://assets/images/astronaut.png" id="2_sy1e3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2167"]
+radius = 37.0
+height = 186.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(376, 849)
+script = ExtResource("1_auvl6")
+metadata/_edit_group_ = true
+
+[node name="Astronaut" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sy1e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_u2167")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

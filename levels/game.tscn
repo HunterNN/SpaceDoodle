@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://p4bll4gp6hks"]
+
+[ext_resource type="Texture2D" uid="uid://cgtossfu0s0ex" path="res://assets/images/repeat.png" id="1_2ogp5"]
+[ext_resource type="PackedScene" uid="uid://c4qbid5ntp5n8" path="res://scenes/plattform.tscn" id="1_3qf86"]
+[ext_resource type="PackedScene" uid="uid://te5evfy6nkmb" path="res://scenes/player.tscn" id="2_30bvq"]
+[ext_resource type="AudioStream" uid="uid://bgl1krestm0hb" path="res://assets/musics/gamejam01.wav" id="4_nrphl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Repeat" type="Sprite2D" parent="."]
+position = Vector2(373, 954)
+scale = Vector2(0.739003, 0.739003)
+texture = ExtResource("1_2ogp5")
+
+[node name="Repeat2" type="Sprite2D" parent="."]
+position = Vector2(373, 198)
+scale = Vector2(0.739003, 0.739003)
+texture = ExtResource("1_2ogp5")
+
+[node name="Plattform" parent="." instance=ExtResource("1_3qf86")]
+position = Vector2(384, 1012)
+
+[node name="Plattform2" parent="." instance=ExtResource("1_3qf86")]
+position = Vector2(393, 680)
+
+[node name="Player" parent="." instance=ExtResource("2_30bvq")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nrphl")
+autoplay = true
