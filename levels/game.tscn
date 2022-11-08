@@ -11,8 +11,7 @@
 position = Vector2(0, -48)
 
 [node name="Repeat" type="Sprite2D" parent="."]
-position = Vector2(9.09495e-13, 336)
-scale = Vector2(0.739003, 0.739003)
+scale = Vector2(1, 1.56)
 texture = ExtResource("1_2ogp5")
 
 [node name="Player" parent="." instance=ExtResource("2_30bvq")]
@@ -29,12 +28,13 @@ autoplay = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
+position = Vector2(-600, -848)
+motion_scale = Vector2(1, 0.5)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(0, -1200)
-z_index = -1
+position = Vector2(-352, -4344)
 texture = ExtResource("1_qhkhc")
+centered = false
 
 [node name="Platform" parent="." instance=ExtResource("6_ysapq")]
 position = Vector2(0, 128)

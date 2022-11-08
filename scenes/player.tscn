@@ -9,6 +9,7 @@ radius = 37.0
 height = 186.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 10
 script = ExtResource("1_auvl6")
 metadata/_edit_group_ = true
 
@@ -21,6 +22,5 @@ shape = SubResource("CapsuleShape2D_u2167")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2(0.8, 1)
 position_smoothing_enabled = true
 script = ExtResource("3_owl8r")
