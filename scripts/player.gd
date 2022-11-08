@@ -35,7 +35,6 @@ func _physics_process(delta: float) -> void:
 	var collision = get_last_slide_collision()
 	if collision:
 		if "Platform" in collision.get_collider().name and is_on_floor():
-			
 			velocity.y = JUMP_VELOCITY
 	
 
