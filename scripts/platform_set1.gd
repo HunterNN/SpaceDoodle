@@ -10,9 +10,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time += delta * 2
-	var counter = PI/16
+	var counter = PI/8
 	for platform in platforms:
-		counter += PI/16
+		counter += PI/8
 	#	platform.position.x = tan(time * PI / 2) * 300
 		platform.position.x = sin(time + counter) * 400
 		print(time + counter)

@@ -1,21 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://4iy3uhji1hua"]
+[gd_scene load_steps=4 format=3 uid="uid://4iy3uhji1hua"]
 
+[ext_resource type="Script" path="res://scripts/platform_set2.gd" id="1_j75v4"]
 [ext_resource type="PackedScene" uid="uid://c4qbid5ntp5n8" path="res://scenes/platform.tscn" id="1_w3hom"]
+[ext_resource type="PackedScene" uid="uid://c2a6x23rwq1u" path="res://scenes/full_collision_platform.tscn" id="3_p1h3s"]
 
 [node name="Node2D" type="Node2D"]
 z_index = 2
+script = ExtResource("1_j75v4")
 
-[node name="Platform" parent="." instance=ExtResource("1_w3hom")]
+[node name="Platform10" parent="." instance=ExtResource("1_w3hom")]
 z_index = 2
 
-[node name="Platform2" parent="." instance=ExtResource("1_w3hom")]
-position = Vector2(512, -512)
+[node name="Platform4" parent="." instance=ExtResource("1_w3hom")]
+position = Vector2(432, -640)
 z_index = 2
 
-[node name="Platform6" parent="." instance=ExtResource("1_w3hom")]
-position = Vector2(-512, -512)
+[node name="Platform8" parent="." instance=ExtResource("1_w3hom")]
+position = Vector2(-416, -640)
 z_index = 2
 
-[node name="Platform9" parent="." instance=ExtResource("1_w3hom")]
-position = Vector2(0, -840)
-z_index = 2
+[node name="Platform2" parent="." instance=ExtResource("3_p1h3s")]
+position = Vector2(-176, -320)
+
+[node name="Platform3" parent="." instance=ExtResource("3_p1h3s")]
+position = Vector2(0, -872)
+
+[node name="Platform5" parent="." instance=ExtResource("3_p1h3s")]
+position = Vector2(176, -320)
+
+[node name="Platform6" parent="." instance=ExtResource("3_p1h3s")]
+position = Vector2(-168, -1208)
+
+[node name="Platform7" parent="." instance=ExtResource("3_p1h3s")]
+position = Vector2(184, -1208)

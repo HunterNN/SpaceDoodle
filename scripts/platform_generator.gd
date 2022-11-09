@@ -12,6 +12,7 @@ func _ready():
 	repeat_texture = load("res://assets/images/repeat.png")
 	sets.append(load("res://scenes/platform_set1.tscn"))
 	sets.append(load("res://scenes/platform_set2.tscn"))
+	sets.append(load("res://scenes/platform_set3.tscn"))
 	var new_set = sets[0].instantiate()
 	active_sets.append(new_set)
 	add_child(new_set)
@@ -25,8 +26,7 @@ func _process(delta):
 		player.position.y = lowest_y
 	if player.position.y < lowest_y:
 		lowest_y -= height
-		#var new_set = sets[-lowest_y / height % 2].instantiate()
-		var new_set = sets[0].instantiate()
+		var new_set = sets[-lowest_y / height % 3].instantiate()
 		active_sets.append(new_set)
 		add_child(new_set)
 		new_set.position.y = lowest_y
