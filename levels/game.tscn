@@ -10,11 +10,16 @@
 [node name="Game" type="Node2D"]
 position = Vector2(0, -48)
 
+[node name="Platform" parent="." instance=ExtResource("6_ysapq")]
+position = Vector2(0, 160)
+z_index = 2
+
 [node name="Repeat" type="Sprite2D" parent="."]
 scale = Vector2(1, 1.56)
 texture = ExtResource("1_2ogp5")
 
 [node name="Player" parent="." instance=ExtResource("2_30bvq")]
+position = Vector2(0, -100)
 
 [node name="PlatformGenerator" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("5_ufq3g")
@@ -35,6 +40,3 @@ motion_scale = Vector2(1, 0.5)
 position = Vector2(-352, -4344)
 texture = ExtResource("1_qhkhc")
 centered = false
-
-[node name="Platform" parent="." instance=ExtResource("6_ysapq")]
-position = Vector2(0, 128)
