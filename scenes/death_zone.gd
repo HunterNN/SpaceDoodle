@@ -11,8 +11,6 @@ func _process(delta):
 	if player.global_position.y < player_max_height:
 		player_max_height = player.global_position.y
 		global_position.y = player_max_height + DEATH_DISTANCE
-		print(position.y)
-		print(player_max_height)
 
 func _on_body_entered(body):
 	if "Player" in body.name:
