@@ -13,6 +13,5 @@ func _process(delta):
 	var counter = PI/4
 	for platform in platforms:
 		counter += PI/4
-	#	platform.position.x = tan(time * PI / 2) * 300
 		platform.position.x = cos(time + counter) * radius
 		platform.position.y = sin(time + counter) * radius + platform_height

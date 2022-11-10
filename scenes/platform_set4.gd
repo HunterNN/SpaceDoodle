@@ -13,10 +13,12 @@ func _process(delta):
 	var counter = PI/8
 	for platform in platforms:
 		counter += PI/8
-		platform.position.x = sin(time + counter) * 400
+		platform.position.x = tan(time + counter) * 400
+
 
 
 func sort_by_position(a, b):
 	if a.position.y < b.position.y:
 		return true
 	return false
+

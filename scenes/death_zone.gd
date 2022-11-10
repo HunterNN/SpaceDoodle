@@ -1,5 +1,5 @@
 extends Area2D
-@export var player:Node2D
+@export var player:Player
 const DEATH_DISTANCE = 0
 var player_max_height = 0
 # Called when the node enters the scene tree for the first time.

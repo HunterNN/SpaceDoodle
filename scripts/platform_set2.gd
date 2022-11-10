@@ -13,7 +13,6 @@ func _process(delta):
 	var counter = PI
 	for platform in platforms:
 		counter += PI
-	#	platform.position.x = tan(time * PI / 2) * 300
 		platform.position.y = sin(time + counter) * 300 + elevator_height
 
 func filter_by_position(a):
