@@ -15,7 +15,6 @@ func _process(delta):
 		counter += PI
 	#	platform.position.x = tan(time * PI / 2) * 300
 		platform.position.y = sin(time + counter) * 300 + elevator_height
-		print(time + counter)
 
 func filter_by_position(a):
 	if a.position.y == -640:

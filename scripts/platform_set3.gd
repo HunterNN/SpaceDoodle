@@ -16,5 +16,3 @@ func _process(delta):
 	#	platform.position.x = tan(time * PI / 2) * 300
 		platform.position.x = cos(time + counter) * radius
 		platform.position.y = sin(time + counter) * radius + platform_height
-
-		print(time + counter)

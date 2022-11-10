@@ -15,7 +15,6 @@ func _process(delta):
 		counter += PI/8
 	#	platform.position.x = tan(time * PI / 2) * 300
 		platform.position.x = sin(time + counter) * 400
-		print(time + counter)
 
 
 func sort_by_position(a, b):

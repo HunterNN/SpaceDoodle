@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c4qbid5ntp5n8" path="res://scenes/platform.tscn" id="6_ysapq"]
 
 [node name="Game" type="Node2D"]
-position = Vector2(0, -48)
 
 [node name="Platform" parent="." instance=ExtResource("6_ysapq")]
 position = Vector2(0, 160)
@@ -33,10 +32,8 @@ autoplay = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-600, -848)
-motion_scale = Vector2(1, 0.5)
+motion_scale = Vector2(0.2, 0.2)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-352, -4344)
+position = Vector2(768, 16)
 texture = ExtResource("1_qhkhc")
-centered = false
