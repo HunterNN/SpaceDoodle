@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmr04mhhy7ffd"]
+
+[ext_resource type="Script" path="res://scripts/platform_set5.gd" id="1_1x2gq"]
+[ext_resource type="PackedScene" uid="uid://c4qbid5ntp5n8" path="res://scenes/platform.tscn" id="1_w3hom"]
+[ext_resource type="PackedScene" uid="uid://c2a6x23rwq1u" path="res://scenes/full_collision_platform.tscn" id="2_nlpl0"]
+
+[node name="Node2D" type="Node2D"]
+z_index = 2
+script = ExtResource("1_1x2gq")
+
+[node name="Set1" type="Node2D" parent="."]
+position = Vector2(0, -88)
+
+[node name="Platform" parent="Set1" instance=ExtResource("1_w3hom")]
+position = Vector2(4, -466.2)
+z_index = 2
+
+[node name="Platform3" parent="Set1" instance=ExtResource("1_w3hom")]
+z_index = 2
+
+[node name="Platform4" parent="Set1" instance=ExtResource("1_w3hom")]
+position = Vector2(4, -1400)
+z_index = 2
+
+[node name="Platform6" parent="Set1" instance=ExtResource("1_w3hom")]
+position = Vector2(-300, -932.4)
+z_index = 2
+
+[node name="FullCollisionPlatform" parent="Set1" instance=ExtResource("2_nlpl0")]
+position = Vector2(-300, -466.2)
+
+[node name="FullCollisionPlatform2" parent="Set1" instance=ExtResource("2_nlpl0")]
+position = Vector2(4, -932.4)
+
+[node name="FullCollisionPlatform3" parent="Set1" instance=ExtResource("2_nlpl0")]
+position = Vector2(-300, -1400)
+
+[node name="Platform8" parent="Set1" instance=ExtResource("1_w3hom")]
+position = Vector2(300, -932.4)
+z_index = 2
+
+[node name="FullCollisionPlatform6" parent="Set1" instance=ExtResource("2_nlpl0")]
+position = Vector2(300, -466.2)
+
+[node name="FullCollisionPlatform7" parent="Set1" instance=ExtResource("2_nlpl0")]
+position = Vector2(300, -1400)
+
+[node name="Set2" type="Node2D" parent="."]
+position = Vector2(0, -88)
+
+[node name="Platform" parent="Set2" instance=ExtResource("1_w3hom")]
+position = Vector2(-300, -466.2)
+z_index = 2
+
+[node name="Platform3" parent="Set2" instance=ExtResource("1_w3hom")]
+z_index = 2
+
+[node name="Platform4" parent="Set2" instance=ExtResource("1_w3hom")]
+position = Vector2(-300, -1400)
+z_index = 2
+
+[node name="FullCollisionPlatform2" parent="Set2" instance=ExtResource("2_nlpl0")]
+position = Vector2(-300, -932.4)
+
+[node name="Platform8" parent="Set2" instance=ExtResource("1_w3hom")]
+position = Vector2(0, -932.4)
+z_index = 2
+
+[node name="FullCollisionPlatform6" parent="Set2" instance=ExtResource("2_nlpl0")]
+position = Vector2(0, -466.2)
+
+[node name="FullCollisionPlatform7" parent="Set2" instance=ExtResource("2_nlpl0")]
+position = Vector2(0, -1400)
+
+[node name="Platform9" parent="Set2" instance=ExtResource("1_w3hom")]
+position = Vector2(300, -466.2)
+z_index = 2
+
+[node name="Platform11" parent="Set2" instance=ExtResource("1_w3hom")]
+position = Vector2(300, -1400)
+z_index = 2
+
+[node name="FullCollisionPlatform9" parent="Set2" instance=ExtResource("2_nlpl0")]
+position = Vector2(300, -932.4)
+
+[node name="Platform12" parent="Set2" instance=ExtResource("1_w3hom")]
+position = Vector2(300, -466.2)
+z_index = 2
+
+[node name="Platform14" parent="Set2" instance=ExtResource("1_w3hom")]
+position = Vector2(300, -1400)
+z_index = 2
+
+[node name="FullCollisionPlatform11" parent="Set2" instance=ExtResource("2_nlpl0")]
+position = Vector2(300, -932.4)

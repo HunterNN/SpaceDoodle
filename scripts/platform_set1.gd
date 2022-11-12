@@ -10,10 +10,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time += delta * 2
-	var counter = PI/8
+	var counter = 1
+	var sign = 1;
 	for platform in platforms:
-		counter += PI/8
-		platform.position.x = sin(time + counter) * 400
+		counter += 1
+		sign *= -1
+		platform.position.x = sign * sin(time + counter * PI/8) * 400
 
 
 func sort_by_position(a, b):

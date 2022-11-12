@@ -1,5 +1,6 @@
 extends CharacterBody2D
 class_name Player
+@export var star_particles:GPUParticles2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -1200.0
@@ -34,5 +35,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	var collision = get_last_slide_collision()
 	if collision:
+		emit_particles(4)
 		if "Platform" in collision.get_collider().name and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+
+func emit_particles(times):
+	for i in range(0,times):
+		star_particles.emit_particle(transform,velocity,Color.WHITE,Color.WHITE,0)

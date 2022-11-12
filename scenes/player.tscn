@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2ou6jxrv2vl4"]
+[gd_scene load_steps=11 format=3 uid="uid://b2ou6jxrv2vl4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_auvl6"]
 [ext_resource type="Texture2D" uid="uid://dsnlyqgmbvlby" path="res://assets/images/astronaut.png" id="2_sy1e3"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_3jrbw"]
 [ext_resource type="Script" path="res://scenes/death_zone.gd" id="4_pa61c"]
+[ext_resource type="Texture2D" uid="uid://cokjtk5owp8s0" path="res://assets/images/star.png" id="5_46g78"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1r1qq"]
 radius = 71.36
@@ -11,9 +12,35 @@ radius = 71.36
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4vd0"]
 size = Vector2(5000, 150)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="Curve" id="Curve_u0hpi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pn3qk"]
+curve = SubResource("Curve_u0hpi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mxfho"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+spread = 90.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.05
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_pn3qk")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("star_particles")]
 z_index = 10
 script = ExtResource("1_auvl6")
+star_particles = NodePath("GPUParticles2D")
 metadata/_edit_group_ = true
 
 [node name="Astronaut" type="Sprite2D" parent="."]
@@ -25,6 +52,7 @@ scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_1r1qq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, 100)
 current = true
 position_smoothing_enabled = true
 script = ExtResource("3_3jrbw")
@@ -37,5 +65,15 @@ player = NodePath("../..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D"]
 position = Vector2(0, 880)
 shape = SubResource("RectangleShape2D_g4vd0")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 1.2
+one_shot = true
+explosiveness = 1.0
+collision_base_size = 10.0
+process_material = SubResource("ParticleProcessMaterial_mxfho")
+texture = ExtResource("5_46g78")
 
 [connection signal="body_entered" from="Camera2D/Area2D" to="Camera2D/Area2D" method="_on_body_entered"]

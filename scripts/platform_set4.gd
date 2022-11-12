@@ -11,9 +11,11 @@ func _ready():
 func _process(delta):
 	time += delta * 2
 	var counter = PI/8
+	var sign = 1
 	for platform in platforms:
 		counter += PI/8
-		platform.position.x = tan(time + counter) * 400
+		sign *= -1
+		platform.position.x =  sign * tan(time + counter) * 400
 
 
 

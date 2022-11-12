@@ -11,7 +11,9 @@ func _ready():
 func _process(delta):
 	time += delta
 	var counter = PI/4
+	var sign = 1
 	for platform in platforms:
+		sign *= -1
 		counter += PI/4
-		platform.position.x = cos(time + counter) * radius
-		platform.position.y = sin(time + counter) * radius + platform_height
+		platform.position.x =  cos(sign * time + counter) * radius
+		platform.position.y =  sin(sign * time + counter) * radius + platform_height
