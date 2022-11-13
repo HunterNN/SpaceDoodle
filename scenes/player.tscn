@@ -52,7 +52,7 @@ scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_1r1qq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, 100)
+offset = Vector2(0, 200)
 current = true
 position_smoothing_enabled = true
 script = ExtResource("3_3jrbw")

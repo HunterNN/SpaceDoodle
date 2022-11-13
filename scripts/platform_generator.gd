@@ -21,7 +21,7 @@ func _ready():
 	sets.append(load("res://scenes/platform_set4.tscn"))
 	sets.append(load("res://scenes/platform_set5.tscn"))
 	#var new_set = sets[rng.randi_range(0, sets.size()-1)].instantiate()
-	var new_set = sets[4].instantiate()
+	var new_set = sets[2].instantiate()
 	active_sets.append(new_set)
 	add_child(new_set)
 	

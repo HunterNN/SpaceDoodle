@@ -15,7 +15,7 @@ func _process(delta):
 	for platform in platforms:
 		counter += PI/8
 		sign *= -1
-		platform.position.x =  sign * tan(time + counter) * 400
+		platform.position.x =  sign * tan(time + counter) * 300
 
 
 
